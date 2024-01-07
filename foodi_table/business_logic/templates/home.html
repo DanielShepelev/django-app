@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodi App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #343a40;
+            padding: 10px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #007bff; /* Bootstrap's primary color */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #000000; /* Darker shade on hover */
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000
+             /* Remove underline for all links */
+        }
+
+        .featured-food {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .food-card {
+            width: 30%;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .food-details {
+            padding: 15px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .logout-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #dc3545; /* Bootstrap's danger color */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover {
+            background-color: #c82333; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="">Home</a>
+        <a href="">Resturants</a>
+        <a href="">Menu</a>
+        <a href="">About Us</a>
+        <a href="">Contact</a>
+        <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+    </nav>
+    <h1>Foodi App</h1>
+    <p>Discover delicious dishes right at your fingertips</p>
+</header>
+
+<main>
+    <section>
+        <h2>Featured Foods</h2>
+        <div class="featured-food">
+            <div class="food-card">
+                <a href=""> <!-- Replace 'food_detail' and 'food_id' with your actual view name and parameter -->
+                    <img src="https://images.pexels.com/photos/1064136/pexels-photo-1064136.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Food Image 1">
+                    <div class="food-details">
+                        <h3>Spaghetti Carbonara</h3>
+                        <p>Classic Italian pasta dish with eggs, cheese, pancetta, and black pepper.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="food-card">
+                <a href="">
+                    <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Food Image 2">
+                    <div class="food-details">
+                        <h3>Sushi Rolls</h3>
+                        <p>Fresh and delicious sushi rolls with a variety of fillings.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="food-card" href="">
+                <a href="">
+                    <img src="https://images.pexels.com/photos/1115251/pexels-photo-1115251.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Food Image 3">
+                    <div class="food-details">  
+                        <h3>Margarita Pizza</h3>
+                        <p>Classic pizza topped with fresh tomatoes, mozzarella, and basil.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add more sections as needed for different categories or features -->
+
+</main>
+
+<footer>
+    <p>&copy; 2023 Foodi App. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+
