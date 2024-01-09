@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'foodi_table.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQL_NAME'),
-        'USER': os.environ.get('MYSQL_USER'),
-        'PASSWORD': os.environ.get('MYSQL_PASSWORD'),
-        'HOST': os.environ.get('MYSQL_HOST'),
+        'NAME': 'mydb',
+        'USER': os.Getenv("USERNAME"),
+        'PASSWORD': os.Getenv("PASSWORD"),
+        'HOST': '10.0.61.151',
         'PORT': '3306',
     }
 }
