@@ -81,9 +81,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mydb',
-        'USER': os.Getenv("USERNAME"),
-        'PASSWORD': os.Getenv("PASSWORD"),
-        'HOST': '10.0.61.151',
+        'USER': os.environ.get("VAULT_USERNAME"),
+        'PASSWORD': os.environ.get("VAULT_PASSWORD"),
+        'HOST': '10.0.244.232',
         'PORT': '3306',
     }
 }
