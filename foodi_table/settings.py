@@ -94,7 +94,7 @@ DATABASES = {
         'NAME': 'mysql',
         'USER': os.environ.get("VAULT_USERNAME", secret_values.get("VAULT_USERNAME")),
         'PASSWORD': os.environ.get("VAULT_PASSWORD", secret_values.get("VAULT_PASSWORD")),
-        'HOST': '10.0.244.232',
+        'HOST': '10.0.17.14',
         'PORT': '3306',
     }
 }
