@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import json
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,12 +78,22 @@ WSGI_APPLICATION = 'foodi_table.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# Read values from the secret file
+secret_file_path = '/vault/secrets/secret'
+
+with open(secret_file_path, 'r') as secret_file:
+    secret_data = secret_file.read()
+
+# Parse the non-JSON formatted data
+secret_values = json.loads(secret_data)
+
+# Update the Django DATABASES configuration
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydb',
-        'USER': os.environ.get("VAULT_USERNAME"),
-        'PASSWORD': os.environ.get("VAULT_PASSWORD"),
+        'NAME': 'mysql',
+        'USER': os.environ.get("VAULT_USERNAME", secret_values.get("VAULT_USERNAME")),
+        'PASSWORD': os.environ.get("VAULT_PASSWORD", secret_values.get("VAULT_PASSWORD")),
         'HOST': '10.0.244.232',
         'PORT': '3306',
     }
